@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GunGlade Team & Links</title>
     <style>
-        /* Mako-ExtraBold 폰트 불러오기 */
         @font-face {
             font-family: "Mako-ExtraBold";
             src: url("https://db.onlinewebfonts.com/t/df94624f0397569bcdfd601a7fa8e0f8.eot");
@@ -15,12 +14,6 @@
             url("https://db.onlinewebfonts.com/t/df94624f0397569bcdfd601a7fa8e0f8.ttf")format("truetype"),
             url("https://db.onlinewebfonts.com/t/df94624f0397569bcdfd601a7fa8e0f8.svg#Mako-ExtraBold")format("svg");
         }
-@font-face {
-    font-family: "Courier"; /* 내가 사용할 이름 (자유롭게 지정) */
-    src: url("./CourierNewBold.ttf") format("truetype"); /* 파일 경로와 형식 */
-    font-weight: normal;
-    font-style: normal;
-}
         body {
             margin: 0;
             padding: 0;
@@ -31,135 +24,106 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100%;
+            min-height: 100vh;
             color: white;
-            padding: 60px 0;
         }
 
         .container {
-            width: 85%;
-            /* 가로 폭을 기존 500px에서 700px로 확장 */
-            max-width: 650px; 
+            width: 90%;
+            max-width: 450px; /* 가로폭을 줄여서 전체적인 스케일 다운 */
             text-align: center;
-            background: rgba(10, 10, 10, 0.35);
+            background: rgba(10, 10, 10, 0.4);
             backdrop-filter: blur(15px);
-            padding: 50px 40px;
-            border-radius: 0;
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 0 50px rgba(0, 0, 0, 0.9);
+            padding: 25px 30px; /* 상하 패딩 대폭 축소 */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
         }
 
         .logo {
-            width: 100%;
-            max-width: 700px; /* 로고 크기도 약간 키움 */
+            width: 80%; /* 로고 크기 축소 */
             height: auto;
-           
-            /* margin-bottom: 50px; */
-            filter: drop-shadow(0 0 15px rgba(255, 65, 65, 0.3));
+            margin: 20px;
+         
+            filter: drop-shadow(0 0 10px rgba(255, 65, 65, 0.3));
         }
 
-        h2 { 
-            font-size: 1rem; /* 가독성을 위해 살짝 키움 */
-            margin-top: 45px; 
-            margin-bottom: 25px; 
+        h2.subTitle { 
+            font-size: 1.1rem; /* 제목 크기 축소 */
+            margin-top: 20px; /* 상단 여백 축소 */
+            margin-bottom: 12px; /* 하단 여백 축소 */
             color: #aaa; 
             text-transform: uppercase; 
-            letter-spacing: 3px; 
-            border-left: 5px solid #ff4141;
-            padding-left: 15px;
+            letter-spacing: 2px; 
+            border-left: 4px solid #ff4141;
+            padding-left: 12px;
+            font-family: 'Courier', Courier, monospace;
             text-align: left;
         }
 
-        /* 팀원 섹션 - 가로가 넓어져서 가독성 향상 */
         .team-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 15px;
-            margin-bottom: 40px;
+            gap: 8px; /* 카드 간격 축소 */
+            margin-bottom: 20px;
         }
 
         .team-card {
             background: rgba(255, 255, 255, 0.03);
-            padding: 22px 25px;
-            border-radius: 0;
-            text-align: left;
+            padding: 12px 18px; /* 내부 여백 축소 */
             border: 1px solid rgba(255, 255, 255, 0.08);
             display: flex;
-            justify-content: space-between; /* 역할과 이름을 양 끝으로 배치해 가독성 확보 */
-            align-items: center;
-            transition: all 0.3s ease;
-        }
-
-        .team-card:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: #ff4141;
-        }
-
-        .team-info {
-            display: flex;
+            justify-content: space-between;
             flex-direction: column;
+            align-items: start
         }
 
         .team-role { 
-            font-size: 0.75rem; 
+            font-size: 0.65rem; 
             color: #ff4141; 
-            margin-bottom: 5px; 
-            display: block; 
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
         }
 
         .team-name { 
-            font-size: 1.5rem; /* 이름 크기 확대 */
-            letter-spacing: 3px;
-            font-weight: normal;
+            font-size: 1.1rem; /* 이름 폰트 크기 축소 */
             font-family: 'Courier', Courier, monospace;
         }
 
-        /* 버튼 그룹 - 가로로 넓게 배치 */
         .link-group { 
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 화면이 넓으면 옆으로 배치됨 */
-            gap: 15px; 
+            grid-template-columns: repeat(3, 1fr); /* 버튼을 가로로 배치하여 세로 길이 절약 */
+            gap: 8px; 
         }
 
         .btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 18px;
+            padding: 10px 5px; /* 버튼 높이 축소 */
             text-decoration: none;
             color: white;
-            background: transparent;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-            font-size: 1rem;
+            font-size: 0.75rem; /* 버튼 글자 크기 축소 */
             text-transform: uppercase;
-            letter-spacing: 2.5px;
+            transition: 0.3s;
         }
 
         .btn:hover {
             background: white;
             color: black;
-            border-color: white;
         }
 
-        /* 하단 개발자 섹션은 구분되도록 별도 처리 */
+        /* 하단 개발자 섹션 */
         .studio-group {
-            margin-top: 15px;
-            grid-template-columns: 1fr 1fr;
-        }
-.subTitle {
-    font-family: 'Courier', Courier, monospace;
-    font-size: 25px;
-}
-        @media (max-width: 600px) {
-            .container { padding: 40px 20px; }
-            .team-card { flex-direction: column; align-items: flex-start; }
-            .team-name { font-size: 1.2rem; }
-            .link-group { grid-template-columns: 1fr; }
+            margin-top: 8px;
+            grid-template-columns: 1fr 1fr; /* 2열 유지 */
         }
 
+        @media (max-width: 480px) {
+            .container { padding: 20px 15px; }
+            .link-group { grid-template-columns: 1fr; } /* 모바일은 가독성을 위해 1열 */
+            .studio-group { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -170,35 +134,29 @@
     <h2 class="subTitle">Team Members</h2>
     <div class="team-grid">
         <div class="team-card">
-            <div class="team-info">
-                <span class="team-role">Developer & Director</span>
-                <span class="team-name">PlayerIGN</span>
-            </div>
+            <span class="team-role">Developer & Director</span>
+            <span class="team-name">PlayerIGN</span>
         </div>
         <div class="team-card">
-            <div class="team-info">
-                <span class="team-role">Server</span>
-                <span class="team-name">H4TIUx</span>
-            </div>
+            <span class="team-role">Server</span>
+            <span class="team-name">H4TIUx</span>
         </div>
         <div class="team-card">
-            <div class="team-info">
-                <span class="team-role">Website</span>
-                <span class="team-name">Byoungyun Kim</span>
-            </div>
+            <span class="team-role">Website</span>
+            <span class="team-name">Byoungyun Kim</span>
         </div>
     </div>
 
     <h2 class="subTitle">Official Links</h2>
     <div class="link-group">
-        <a href="https://dsc.gg/gunglade" class="btn" target="_blank">Join Discord</a>
+        <a href="https://dsc.gg/gunglade" class="btn" target="_blank">Discord</a>
         <a href="https://x.com/GunGlade" class="btn" target="_blank">Twitter</a>
         <a href="https://www.youtube.com/@GunGlade" class="btn" target="_blank">YouTube</a>
     </div>
 
     <h2 class="subTitle">Studio & Devs</h2>
     <div class="link-group studio-group">
-        <a href="https://x.com/autodidactgames" class="btn" target="_blank">Autodidact Games</a>
+        <a href="https://x.com/autodidactgames" class="btn" target="_blank">Autodidact</a>
         <a href="https://x.com/Player_KDA" class="btn" target="_blank">Player_KDA</a>
     </div>
 </div>
