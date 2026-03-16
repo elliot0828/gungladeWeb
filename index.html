@@ -1,186 +1,170 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GunGlade Team & Links</title>
-
-<style>
-/* ================= FONT ================= */
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GunGlade Team & Links</title>
+    <style>
+        /* Mako-ExtraBold 폰트 불러오기 */
+        @font-face {
+            font-family: "Mako-ExtraBold";
+            src: url("https://db.onlinewebfonts.com/t/df94624f0397569bcdfd601a7fa8e0f8.eot");
+            src: url("https://db.onlinewebfonts.com/t/df94624f0397569bcdfd601a7fa8e0f8.eot?#iefix")format("embedded-opentype"),
+            url("https://db.onlinewebfonts.com/t/df94624f0397569bcdfd601a7fa8e0f8.woff2")format("woff2"),
+            url("https://db.onlinewebfonts.com/t/df94624f0397569bcdfd601a7fa8e0f8.woff")format("woff"),
+            url("https://db.onlinewebfonts.com/t/df94624f0397569bcdfd601a7fa8e0f8.ttf")format("truetype"),
+            url("https://db.onlinewebfonts.com/t/df94624f0397569bcdfd601a7fa8e0f8.svg#Mako-ExtraBold")format("svg");
+        }
 @font-face {
-    font-family: "Mako-ExtraBold";
-    src: url("https://db.onlinewebfonts.com/t/df94624f0397569bcdfd601a7fa8e0f8.eot");
-    src: url("https://db.onlinewebfonts.com/t/df94624f0397569bcdfd601a7fa8e0f8.eot?#iefix")format("embedded-opentype"),
-    url("https://db.onlinewebfonts.com/t/df94624f0397569bcdfd601a7fa8e0f8.woff2")format("woff2"),
-    url("https://db.onlinewebfonts.com/t/df94624f0397569bcdfd601a7fa8e0f8.woff")format("woff"),
-    url("https://db.onlinewebfonts.com/t/df94624f0397569bcdfd601a7fa8e0f8.ttf")format("truetype"),
-    url("https://db.onlinewebfonts.com/t/df94624f0397569bcdfd601a7fa8e0f8.svg#Mako-ExtraBold")format("svg");
+    font-family: "Courier"; /* 내가 사용할 이름 (자유롭게 지정) */
+    src: url("./CourierNewBold.ttf") format("truetype"); /* 파일 경로와 형식 */
+    font-weight: normal;
+    font-style: normal;
 }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Mako-ExtraBold", sans-serif;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                        url('bg2.webp') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100%;
+            color: white;
+            padding: 60px 0;
+        }
 
-@font-face {
-    font-family: "Courier";
-    src: url("./CourierNewBold.ttf") format("truetype");
+        .container {
+            width: 85%;
+            /* 가로 폭을 기존 500px에서 700px로 확장 */
+            max-width: 650px; 
+            text-align: center;
+            background: rgba(10, 10, 10, 0.35);
+            backdrop-filter: blur(15px);
+            padding: 50px 40px;
+            border-radius: 0;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.9);
+        }
+
+        .logo {
+            width: 100%;
+            max-width: 700px; /* 로고 크기도 약간 키움 */
+            height: auto;
+           
+            /* margin-bottom: 50px; */
+            filter: drop-shadow(0 0 15px rgba(255, 65, 65, 0.3));
+        }
+
+        h2 { 
+            font-size: 1rem; /* 가독성을 위해 살짝 키움 */
+            margin-top: 45px; 
+            margin-bottom: 25px; 
+            color: #aaa; 
+            text-transform: uppercase; 
+            letter-spacing: 3px; 
+            border-left: 5px solid #ff4141;
+            padding-left: 15px;
+            text-align: left;
+        }
+
+        /* 팀원 섹션 - 가로가 넓어져서 가독성 향상 */
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .team-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 22px 25px;
+            border-radius: 0;
+            text-align: left;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            justify-content: space-between; /* 역할과 이름을 양 끝으로 배치해 가독성 확보 */
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: #ff4141;
+        }
+
+        .team-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .team-role { 
+            font-size: 0.75rem; 
+            color: #ff4141; 
+            margin-bottom: 5px; 
+            display: block; 
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .team-name { 
+            font-size: 1.5rem; /* 이름 크기 확대 */
+            letter-spacing: 3px;
+            font-weight: normal;
+            font-family: 'Courier', Courier, monospace;
+        }
+
+        /* 버튼 그룹 - 가로로 넓게 배치 */
+        .link-group { 
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 화면이 넓으면 옆으로 배치됨 */
+            gap: 15px; 
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px;
+            text-decoration: none;
+            color: white;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+        }
+
+        .btn:hover {
+            background: white;
+            color: black;
+            border-color: white;
+        }
+
+        /* 하단 개발자 섹션은 구분되도록 별도 처리 */
+        .studio-group {
+            margin-top: 15px;
+            grid-template-columns: 1fr 1fr;
+        }
+.subTitle {
+    font-family: 'Courier', Courier, monospace;
+    font-size: 25px;
 }
+        @media (max-width: 600px) {
+            .container { padding: 40px 20px; }
+            .team-card { flex-direction: column; align-items: flex-start; }
+            .team-name { font-size: 1.2rem; }
+            .link-group { grid-template-columns: 1fr; }
+        }
 
-/* ================= BASE ================= */
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: "Mako-ExtraBold", sans-serif;
-    background:
-        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-        url('bg2.webp') no-repeat center center fixed;
-    background-size: cover;
-    min-height: 100vh;
-    color: white;
-    align-content: center;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-}
-
-/* ================= CONTAINER ================= */
-.container {
-    width: min(95%, 720px);
-    margin:80px auto;
-    padding: clamp(25px, 5vw, 55px);
-    background: rgba(10,10,10,0.45);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border: 2px solid rgba(255,255,255,0.08);
-    box-shadow: 0 0 60px rgba(0,0,0,0.9);
-    text-align: center;
-}
-
-/* ================= LOGO ================= */
-.logo {
-    width: 90%;
-    
-    max-width: 680px;
-    height: auto;
-    filter: drop-shadow(0 0 20px rgba(255,65,65,0.35));
-}
-
-/* ================= SUBTITLE ================= */
-h2.subTitle {
-    font-family: 'Courier', monospace;
-    font-size: clamp(18px, 2vw, 24px);
-    margin: 50px 0 25px 0;
-    color: #aaa;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    border-left: 5px solid #ff4141;
-    padding-left: 15px;
-    text-align: left;
-}
-
-/* ================= TEAM ================= */
-.team-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 18px;
-    margin-bottom: 40px;
-}
-
-.team-card {
-    background: rgba(255,255,255,0.04);
-    padding: 22px 25px;
-    border: 1px solid rgba(255,255,255,0.08);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: all 0.3s ease;
-}
-
-.team-card:hover {
-    background: rgba(255,255,255,0.08);
-    border-color: #ff4141;
-    transform: translateY(-3px);
-}
-
-.team-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.team-role {
-    font-size: 0.75rem;
-    color: #ff4141;
-    margin-bottom: 5px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.team-name {
-    font-size: clamp(1.1rem, 2vw, 1.5rem);
-    letter-spacing: 3px;
-    font-family: 'Courier', monospace;
-}
-
-/* ================= LINKS ================= */
-.link-group {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 15px;
-}
-
-.btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 18px;
-    text-decoration: none;
-    color: white;
-    background: transparent;
-    border: 1px solid rgba(255,255,255,0.25);
-    transition: all 0.3s ease;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
-}
-
-.btn:hover {
-    background: white;
-    color: black;
-    border-color: white;
-}
-
-.studio-group {
-    margin-top: 15px;
-}
-
-/* ================= MOBILE ================= */
-@media (max-width: 600px) {
-
-    .container {
-        width: 92%;
-        margin: 50px auto;
-    }
-
-    .team-card {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-    }
-
-    .link-group {
-        grid-template-columns: 1fr;
-    }
-
-    h2.subTitle {
-        margin-top: 35px;
-    }
-}
-</style>
+    </style>
 </head>
-
 <body>
 
 <div class="container">
-
     <img src="title2.png" alt="Gun Glade Logo" class="logo">
 
     <h2 class="subTitle">Team Members</h2>
@@ -191,14 +175,12 @@ h2.subTitle {
                 <span class="team-name">PlayerIGN</span>
             </div>
         </div>
-
         <div class="team-card">
             <div class="team-info">
                 <span class="team-role">Server</span>
                 <span class="team-name">H4TIUx</span>
             </div>
         </div>
-
         <div class="team-card">
             <div class="team-info">
                 <span class="team-role">Website</span>
@@ -219,7 +201,6 @@ h2.subTitle {
         <a href="https://x.com/autodidactgames" class="btn" target="_blank">Autodidact Games</a>
         <a href="https://x.com/Player_KDA" class="btn" target="_blank">Player_KDA</a>
     </div>
-
 </div>
 
 </body>
