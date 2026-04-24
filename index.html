@@ -30,27 +30,26 @@
 
         .container {
             width: 90%;
-            max-width: 450px; /* 가로폭을 줄여서 전체적인 스케일 다운 */
+            max-width: 450px;
             text-align: center;
             background: rgba(10, 10, 10, 0.4);
             backdrop-filter: blur(15px);
-            padding: 25px 30px; /* 상하 패딩 대폭 축소 */
+            padding: 25px 30px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
         }
 
         .logo {
-            width: 80%; /* 로고 크기 축소 */
+            width: 80%;
             height: auto;
             margin: 20px;
-         
             filter: drop-shadow(0 0 10px rgba(255, 65, 65, 0.3));
         }
 
         h2.subTitle { 
-            font-size: 1.1rem; /* 제목 크기 축소 */
-            margin-top: 20px; /* 상단 여백 축소 */
-            margin-bottom: 12px; /* 하단 여백 축소 */
+            font-size: 1.1rem;
+            margin-top: 20px;
+            margin-bottom: 12px;
             color: #aaa; 
             text-transform: uppercase; 
             letter-spacing: 2px; 
@@ -63,13 +62,13 @@
         .team-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 8px; /* 카드 간격 축소 */
+            gap: 8px;
             margin-bottom: 20px;
         }
 
         .team-card {
             background: rgba(255, 255, 255, 0.03);
-            padding: 12px 18px; /* 내부 여백 축소 */
+            padding: 12px 18px;
             border: 1px solid rgba(255, 255, 255, 0.08);
             display: flex;
             justify-content: space-between;
@@ -85,13 +84,13 @@
         }
 
         .team-name { 
-            font-size: 1.1rem; /* 이름 폰트 크기 축소 */
+            font-size: 1.1rem;
             font-family: 'Courier', Courier, monospace;
         }
 
         .link-group { 
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 버튼을 가로로 배치하여 세로 길이 절약 */
+            grid-template-columns: repeat(3, 1fr);
             gap: 8px; 
         }
 
@@ -99,11 +98,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 10px 5px; /* 버튼 높이 축소 */
+            padding: 10px 5px;
             text-decoration: none;
             color: white;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            font-size: 0.75rem; /* 버튼 글자 크기 축소 */
+            font-size: 0.75rem;
             text-transform: uppercase;
             transition: 0.3s;
         }
@@ -113,15 +112,24 @@
             color: black;
         }
 
-        /* 하단 개발자 섹션 */
+        /* 스팀 다운로드 버튼 전용 스타일 */
+        .btn-steam {
+            border: 1px solid #ff4141;
+            background: rgba(255, 65, 65, 0.1);
+        }
+        .btn-steam:hover {
+            background: #ff4141;
+            color: white;
+        }
+
         .studio-group {
             margin-top: 8px;
-            grid-template-columns: 1fr 1fr; /* 2열 유지 */
+            grid-template-columns: 1fr 1fr;
         }
 
         @media (max-width: 480px) {
             .container { padding: 20px 15px; }
-            .link-group { grid-template-columns: 1fr; } /* 모바일은 가독성을 위해 1열 */
+            .link-group { grid-template-columns: 1fr; }
             .studio-group { grid-template-columns: 1fr; }
         }
     </style>
@@ -137,11 +145,15 @@
             <span class="team-role">Developer & Director</span>
             <span class="team-name">PlayerIGN</span>
         </div>
-
         <div class="team-card">
             <span class="team-role">Website</span>
             <span class="team-name">Byoungyun Kim</span>
         </div>
+    </div>
+
+    <h2 class="subTitle">Download</h2>
+    <div style="margin-bottom: 20px;">
+        <a href="https://store.steampowered.com/app/2448920/Gun_Glade/" class="btn btn-steam" target="_blank">Play on Steam</a>
     </div>
 
     <h2 class="subTitle">Official Links</h2>
